@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="css/content.css" rel="stylesheet">
+
+    <title>How The Internet Works</title>
+</head>
+<body style="background-color:lightblue;">
+<header class=".bg-dark">
+    <!-- Content here -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="About.html">About<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        How The Internet Works
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="Domain%20Names.html">Domain Names</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="ICANN.html">ICANN</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="IP%20Address.html">IP Address</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="Packets.html">Packets</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="Routing.html">Routing</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="DNS.html">DNS</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="HTTP%20and%20HTTPS%20Protocols.html">HTTP and HTTPS protocols</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="W3C.html">W3C</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="HTML.html">HTML</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="CSS.html">CSS</a>
+                    </div>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <h1 class="text-center"><i><b>DNS</b></i></h1>
+    <hr>
+    <img src="https://blogvaronis2.wpengine.com/wp-content/uploads/2019/01/how-dns-works@2x-960x701.png" class="d-block w-100" alt="...">
+    <p class="text-justify">(Image Credit: https://www.varonis.com/)</p>
+    <p class="text-justify">The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources. Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).</p>
+    <br><p class="text-justify"><b>HOW DOES A DNS QUERY WORK?</b></p>
+    <img src="https://totaluptime.com/wp-content/uploads/2014/05/how-does-a-dns-query-work-768x380.png" class="d-block w-100" alt="...">
+    <p class="text-justify">(Image Credit: https://totaluptime.com/)</p>
+    <p class="text-justify">When you open your browser and type in “www.example.com”, or a DNS client needs to look up a name used in a program, it queries DNS servers to resolve the name. Each query message the client sends contains three pieces of information, specifying a question for the DNS server to answer:<ul><li>A specified DNS domain name, stated as a fully qualified domain name (FQDN) such as “www.example.com”</li><li>A specified query type, which can either specify a resource record by type or a specialized type of query operation such as A, CNAME, NS etc.</li><li>A specified class for the DNS domain name such as IN (Internet)</li></ul>
+
+    <p class="text-justify"><b>To understand the process of sending a query for a specific domain or IP and getting the record that corresponds to it, let us understand the steps involved a DNS lookup:</b></p>
+    <ol>
+        <li>A DNS request starts when you try to access a computer on the internet.</li>
+        <li>The first stop for the DNS request is the local DNS cache.</li>
+        <li>If you don’t have the IP address in your local DNS cache, DNS will check with a recursive DNS server.</li>
+        <li>The recursive DNS server has its own cache, and if it has the IP address, it will return it to you.</li>
+        <li>The next stop is the TLD name servers, in this case, the TLD name server for the .com addresses.</li>
+        <li>What the TLD name servers do have is the location of the authoritative name server for the requested site.</li>
+        <li>Your local DNS service  gets the IP address and connects to www.varonis.com to download all the glorious content.</li>
+    </ol>
+    <p class="text-justify"><b>4 DNS SERVERS THAT LOAD THE WEBPAGE ARE:</b></p>
+    <p class="text-justify"><ul><li>DNS Recursor</li><li>Root Name Server</li><li>TLD Name Server</li><li>Authorative Name Server</li></ul></p>
+    <p class="text-justify"><b>TYPES OF DNS QUERIES:</b></p>
+    <p class="text-justify"><ul><li>Recursive Queries</li><li>Iterative Queries</li><li>Non-recursive Queries</li></ul></p>
+    <p class="text-justify"><b>TYPES OF DNS RECORDS:</b></p>
+    <p class="text-justify"><ul><li>A Records</li><li>AAAA Records</li><li>CNAME Records</li><li>MX Records</li><li>SPF Records</li><li>PTR Records</li><li>NS Records</li></ul></p>
+    <p class="text-center"><b>THE DNS RECORD FORMAT</b></p>
+    <img src="Images/DNS Record Format.png" class="d-block w-100" alt="...">
+    <br>
+
+</div>
+
+
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="col-xs-50 col-md-15">
+            <h5>BROWSE THROUGH THESE LINKS FOR MORE!!</h5><br>
+            <a href= About.html>About</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= Domain%20Names.html>Domain Names</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= ICANN.html>ICANN</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= IP%20Address.html>IP Address</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= Packets.html>Packets</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= Routing.html>Routing</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= DNS.html>DNS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= HTTP%20and%20HTTPS%20Protocols.html>HTTP & HTTPS PROTOCOL</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= W3C.html>W3C</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= HTML.html>HTML</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= CSS.html>CSS</a>
+        </div>
+    </div>
+</footer>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+</html>

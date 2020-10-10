@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="css/content.css" rel="stylesheet">
+
+    <title>How The Internet Works</title>
+</head>
+<body style="background-color:lightblue;">
+<header class=".bg-dark">
+    <!-- Content here -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="About.html">About<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        How The Internet Works
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="Domain%20Names.html">Domain Names</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="ICANN.html">ICANN</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="IP%20Address.html">IP Address</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="Packets.html">Packets</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="Routing.html">Routing</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="DNS.html">DNS</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="HTTP%20and%20HTTPS%20Protocols.html">HTTP and HTTPS protocols</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="W3C.html">W3C</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="HTML.html">HTML</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="CSS.html">CSS</a>
+
+                    </div>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <h1 class="text-center"><b><i>PACKETS</i></b></h1>
+    <hr>
+    <p class="text-justify">Every webpage that you receive comes as a series of packets, and every e-mail you send leaves as a series of packets. Networks that ship data around in small packets are called packet switched networks.</p>
+    <p class="text-justify">On the Internet, the network breaks an e-mail message into parts of a certain size in bytes. These are the packets. Each packet carries the information that will help it get to its destination -- the sender's IP address, the intended receiver's IP address, something that tells the network how many packets this e-mail message has been broken into and the number of this particular packet. The packets carry the data in the protocols that the Internet uses: Transmission Control Protocol/Internet Protocol (TCP/IP). Each packet contains part of the body of your message. A typical packet contains perhaps 1,000 or 1,500 bytes.</p>
+    <p class="text-justify">Each packet is then sent off to its destination by the best available route -- a route that might be taken by all the other packets in the message or by none of the other packets in the message. This makes the network more efficient. First, the network can balance the load across various pieces of equipment on a millisecond-by-millisecond basis. Second, if there is a problem with one piece of equipment in the network while a message is being transferred, packets can be routed around the problem, ensuring the delivery of the entire message.</p>
+    <p class="text-justify"><b>Let us understand Packets by considering IPv4 Packet Structure</b></p>
+    <br>
+    <img src="https://www.tutorialspoint.com/ipv4/images/ip_header.jpg" class="d-block w-100" alt="...">
+    <p class="text-justify">(Image Credit: https://www.tutorialspoint.com/)</p>
+    <ul>
+        <li><b>Version:</b> Version no. of Internet Protocol used</li>
+        <li><b>IHL:</b> Internet Header Length; Length of entire IP header</li>
+        <li><b>DSCP:</b> ifferentiated Services Code Point; this is Type of Service</li>
+        <li><b>ECN:</b> Explicit Congestion Notification; It carries information about the congestion seen in the route</li>
+        <li><b>Total Length:</b> Length of entire IP Packet (including IP header and IP Payload)</li>
+        <li><b>Identification:</b> If IP packet is fragmented during the transmission, all the fragments contain same identification number. to identify original IP packet they belong to</li>
+        <li><b>Flags:</b> As required by the network resources, if IP Packet is too large to handle, these ‘flags’ tells if they can be fragmented or not. In this 3-bit flag, the MSB is always set to ‘0’.</li>
+        <li><b>Fragment Offset:</b> This offset tells the exact position of the fragment in the original IP Packet</li>
+        <li><b>Time to Live:</b> To avoid looping in the network, every packet is sent with some TTL value set, which tells the network how many routers (hops) this packet can cross. At each hop, its value is decremented by one and when the value reaches zero, the packet is discarded</li>
+        <li><b>Protocol:</b> Tells the Network layer at the destination host, to which Protocol this packet belongs to, i.e. the next level Protocol. For example protocol number of ICMP is 1, TCP is 6 and UDP is 17.</li>
+        <li><b>Header Checksum:</b> This field is used to keep checksum value of entire header which is then used to check if the packet is received error-free</li>
+        <li><b>Source Address:</b> 32-bit address of the Sender (or source) of the packet</li>
+        <li><b>Destination Address:</b> 32-bit address of the Receiver (or destination) of the packet.</li>
+        <li><b>Options:</b> This is optional field, which is used if the value of IHL is greater than 5. These options may contain values for options such as Security, Record Route, Time Stamp, etc.</li>
+    </ul>
+    <br>
+</div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="col-xs-50 col-md-15">
+            <h5>BROWSE THROUGH THESE LINKS FOR MORE!!</h5><br>
+            <a href= About.html>About</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= Domain%20Names.html>Domain Names</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= ICANN.html>ICANN</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= IP%20Address.html>IP Address</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= Packets.html>Packets</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= Routing.html>Routing</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= DNS.html>DNS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= HTTP%20and%20HTTPS%20Protocols.html>HTTP & HTTPS PROTOCOL</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= W3C.html>W3C</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= HTML.html>HTML</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href= CSS.html>CSS</a>
+        </div>
+    </div>
+</footer>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+</html>
